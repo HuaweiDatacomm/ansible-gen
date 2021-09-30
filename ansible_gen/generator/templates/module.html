@@ -1,0 +1,99 @@
+{{head}}
+
+{{module}}
+import sys
+from collections import OrderedDict
+from ansible.module_utils.network.ne.common_module.ne_base import ConfigBase,GetBase, InputBase
+from ansible.module_utils.network.ne.ne import get_nc_config, set_nc_config, ne_argument_spec
+
+ANSIBLE_METADATA = {'metadata_version': '1.1',
+                    'status': ['preview'],
+                    'supported_by': 'community'}
+
+EXAMPLE = """
+{{ example}}
+"""
+DOCUMENTATION = """
+{{documentation}}
+"""
+
+
+
+xml_head = """{{xml_head}}"""
+
+xml_tail = """{{xml_tail}}"""
+
+# Keyword list
+key_list = {{key_list|safe}}
+
+namespaces = {{namespaces}}
+
+business_tag = {{business_tag}}
+
+# Passed to the ansible parameter
+argument_spec = {{argument_spec|replace('}, ' , '}, \n' + (' '*12))
+                |replace(': {' , ': {\n' + (' '*20))}}
+
+# Operation type
+operation_dict = {'operation_type':{'type': 'str', 'required':True, 'choices': ['config','get','get-config','rpc']},
+                  'operation_specs': {
+                      'elements': 'dict', 'type': 'list','options': {
+                          'path': {
+                              'type': 'str'}, 'operation': {
+                              'choices': ['merge', 'replace', 'create', 'delete', 'remove'],'default':'merge'}}}}
+
+# Parameters passed to check params
+leaf_info =  {{leaf_info|replace('], ' , '], \n' + (' '*16))
+             |replace('), ' , '), \n'+(' '*12))
+             |replace("'pattern'" , "\n" + (' '*16) + "'pattern'",)
+             |replace(', {'  , ', {\n' + (' '*16))}}
+
+
+# User check params
+{{user_check_stmts}}
+
+# Call the ConfigBase base class
+def config_base(config_args):
+    class_object = ConfigBase(*config_args)
+    class_object.run()
+
+
+# Call the GetBase base class
+def get_base(get_args):
+    class_object = GetBase(*get_args)
+    class_object.run()
+
+def input_base(input_args):
+    class_object = InputBase(*input_args)
+    class_object.run()
+
+
+# According to the type of message
+def operation(operation_type,args):
+    if operation_type == 'config':
+        config_base(args)
+    elif operation_type == 'get' or operation_type == 'get-config':
+        get_base(args)
+    else:
+        input_base(args)
+
+
+def filter_check(user_check_obj):
+    return (list(
+        filter(lambda m: m.startswith("check_"), [i + '()' for i in dir(user_check_obj)])))
+
+
+def main():
+    """Module main"""
+    argument_spec.update(ne_argument_spec)
+    argument_spec.update(operation_dict)
+    args = (argument_spec, leaf_info, namespaces, business_tag, xml_head,xml_tail,key_list)
+    module_params = ConfigBase(*args).get_operation_type()
+    for check_func in filter_check(UserCheck):
+        if not eval('UserCheck(module_params, leaf_info).' + check_func):
+            ConfigBase(*args).init_module().fail_json(msg='UserCheck.'+ check_func)
+    operation(module_params['operation_type'], args)
+
+
+if __name__ == '__main__':
+    main()

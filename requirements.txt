@@ -1,0 +1,7 @@
+Jinja2==2.11.0
+MarkupSafe==1.1.0
+lxml==4.6.3
+pycodestyle==2.5.0
+pyang==2.5.0
+autopep8==1.4.3
+xmltodict==0.11.0
