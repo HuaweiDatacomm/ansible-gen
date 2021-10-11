@@ -26,7 +26,7 @@ else:
 
 
 USAGE = "Dynamically generate Ansible modules from yang and xml files, then deploy Ansible module"
-__version__ = "0.1.0beta"
+__version__ = "0.2.0"
 
 SCRIPT_GEN_LOG_FILE = "ansible_gen.log"
 BASE_ERROR = r"##########ANSIBLE_GEN_ERROR_START##########"
@@ -136,7 +136,7 @@ def parse_args():
     (options, args) = parser.parse_args()
 
     if options.version:
-        print("ansible-gen 1.0.stable")
+        print("ansible-gen", __version__)
         sys.exit()
 
     fill_args_from_cfg_file(args, options)
