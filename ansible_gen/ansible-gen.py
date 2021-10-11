@@ -136,7 +136,7 @@ def parse_args():
     (options, args) = parser.parse_args()
 
     if options.version:
-        print("ansible-gen 1.0.stable")
+        print("ansible-gen", __version__)
         sys.exit()
 
     fill_args_from_cfg_file(args, options)
