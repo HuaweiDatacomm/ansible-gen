@@ -40,29 +40,39 @@ see Documentation
 
 ## **How to use**
 input commandline: **ansilbe-gen -h** after installation.
+
 ansible-gen -h
-`Usage: ansible-gen.py [options]`
 
-`Dynamically generate Ansible modules from yang and xml files, then deploy`
-`Ansible module`
+Usage: ansible-gen.py [options]
 
-`Options:`
-  `-h, --help            show this help message and exit`
-  `-v, --version         version number info for program`
-  `-y YANG_DIR, --yang_dir=YANG_DIR`
-                        `the directory of yang_files.`
-  `-r XML_DIR, --resource=XML_DIR`
-                        `the directory of xml files which contains netconf rpc`
-                        `message.`
-  `-p SCRIPT_DIR, --script=SCRIPT_DIR`
-                        `the directory of previous generated ansible module`
-                        `which may has user define check implementation.`
-  `-l LOG_DIR, --log=LOG_DIR`
-                        `the log directory, name of log is ansible_gen.log`
-  `-o OUTPUT_DIR, --output=OUTPUT_DIR`
-                        `the output dir for generated scripts`
-  `--default get parameters from default config file /etc/ansible-`
-                        `gen/default.cfg`
+Dynamically generate Ansible modules from yang and xml files, then deploy
+Ansible module
 
-`Ansible-gen 0.2.0`
+Options:
+
+  -h, --help            show this help message and exit
+
+  -v, --version         version number info for program
+
+  -y YANG_DIR, --yang_dir=YANG_DIR
+                        the directory of yang_files.
+
+  -r XML_DIR, --resource=XML_DIR
+                        the directory of xml files which contains netconf rpc
+                        message.
+
+  -p SCRIPT_DIR, --script=SCRIPT_DIR
+                        the directory of previous generated ansible module
+                        which may has user define check implementation.
+
+  -l LOG_DIR, --log=LOG_DIR
+                        the log directory, name of log is ansible_gen.log
+
+  -o OUTPUT_DIR, --output=OUTPUT_DIR
+                        the output dir for generated scripts
+
+  --default get parameters from default config file /etc/ansible-
+                        gen/default.cfg
+
+Ansible-gen 0.2.0
 
