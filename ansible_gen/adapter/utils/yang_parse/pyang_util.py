@@ -15,22 +15,32 @@ def init_ctx(path='./yang'):
 
 def parse_yang_module(yang_file_path, ctx):
     r = re.compile(r"^(.*?)(\@(\d{4}-\d{2}-\d{2}))?\.(yang|yin)$")
+    r1 = re.compile(r"^(.*?)\.(yang|yin)$")
     try:
-        with open(yang_file_path, "r", encoding="UTF-8") as fd:
-            text = fd.read()
-            m = r.search(yang_file_path)
-            ctx.yin_module_map = {}
-            if m is not None:
-                (name, _dummy, rev, format) = m.groups()
-                name = os.path.basename(name)
-                ctx.add_module(yang_file_path, text, format, name, rev)
-            else:
-                ctx.add_module(yang_file_path, text)
+        if sys.version_info[0] == 2:
+            fd = io.open(yang_file_path, "r", encoding="UTF-8")
+        else:
+            fd = open(yang_file_path, "r", encoding="UTF-8")
+        text = fd.read()
+        m1 = r1.search(yang_file_path)
+        if m1 is None:
+            return ctx
+        m = r.search(yang_file_path)
+        ctx.yin_module_map = {}
+        if m is not None:
+            (name, _dummy, rev, format) = m.groups()
+            name = os.path.basename(name)
+            ctx.add_module(yang_file_path, text, format, name, rev)
+        else:
+            ctx.add_module(yang_file_path, text)
     except Exception:
         yang_error_write("can not open the file %s" % yang_file_path)
-
+    finally:
+        if fd is not None:
+            fd.close()
     logging.info('parse yang module %s success!', yang_file_path)
     return ctx
+
 
 def parse_yang_modules(yang_directory, ctx):
     if os.path.isfile(yang_directory):
