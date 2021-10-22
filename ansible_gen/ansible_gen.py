@@ -10,11 +10,10 @@ import re
 import shutil
 import math
 from optparse import OptionParser
-from ansible_gen.generator.ansible_auto_scripts import deploy
-from ansible_gen.adapter import get_argument_spec_documentation as get_parser
-from ansible_gen.generator import var, ansible_auto_scripts as script_gen
-from ansible_gen.generator.move_file import *
-from ansible_gen.adapter.utils import base_util
+from .adapter import get_argument_spec_documentation as get_parser
+from .generator import var, ansible_auto_scripts as script_gen
+from .generator.move_file import *
+from .adapter.utils import base_util
 
 if not sys.version > '3':
     import ConfigParser as configparser
@@ -26,7 +25,7 @@ else:
 
 
 USAGE = "Dynamically generate Ansible modules from yang and xml files, then deploy Ansible module"
-__version__ = "0.3.1"
+__version__ = "0.3.2"
 
 SCRIPT_GEN_LOG_FILE = "ansible_gen.log"
 BASE_ERROR = r"##########ANSIBLE_GEN_ERROR_START##########"

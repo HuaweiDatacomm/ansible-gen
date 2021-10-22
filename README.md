@@ -36,22 +36,6 @@ $python setup.py install
 $pip3 install ansible-gen
 ```
 
-### **install command**
-
-_Note: for macOS, you should [disable SIP](https://developer.apple.com/documentation/security/disabling_and_enabling_system_integrity_protection) firstly._
-
-```
-$cd ./ansible-gen/ansible-gen
-```
-
-```
-$chmod +x ./ansible-gen.sh
-```
-
-```
-$./ansible-gen.sh
-```
-
 
 ## **How to use**
 input commandline: **ansilbe-gen -h** after installation.
