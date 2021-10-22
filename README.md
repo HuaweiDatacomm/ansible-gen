@@ -1,10 +1,8 @@
 # **ansible-gen**
 
 ## **Overview**
-ansible-gen is a tool which can generated ansible modules according to yang modules and some user-specified files automatically.
+ansible-gen is an automatic code generation tool for ansible modules according to YANG modules and some user-specified files which is designed to managemant the devices through NETCONF.
 
-## **Documentation**
-see Documentation
 
 ## **Installation**
 ### **Prerequisites**
@@ -26,22 +24,34 @@ see Documentation
 
 
 ### **From Source**
-`git clone https://github.com/HuaweiDatacomm/ansible-gen.git`
+```
+$git clone https://github.com/HuaweiDatacomm/ansible-gen.git
+```
 
-`cd ./ansible-gen/ansible-gen` 
+```
+$cd ./ansible-gen/ansible-gen
+```
 
-`chmod +x ./ansible-gen.sh` 
+```
+$chmod +x ./ansible-gen.sh
+```
 
-`./ansible-gen.sh`
+```
+$./ansible-gen.sh
+```
 
 ### **From Pypi**
 
-`pip3 install ansible-gen`
+```
+$pip3 install ansible-gen
+```
 
 ## **How to use**
 input commandline: **ansilbe-gen -h** after installation.
 
-ansible-gen -h
+```
+$ansible-gen -h
+```
 
 Usage: ansible-gen.py [options]
 
@@ -76,3 +86,6 @@ Options:
 
 Ansible-gen 0.2.0
 
+
+## **Additional Resources**
+TBD
