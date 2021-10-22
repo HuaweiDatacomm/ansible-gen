@@ -1,0 +1,1 @@
+include ansible_gen/generator/templates/module.html
