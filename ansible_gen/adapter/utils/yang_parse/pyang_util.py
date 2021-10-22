@@ -6,7 +6,8 @@ import sys
 from pyang.context import Context
 from pyang.repository import FileRepository
 import pyang
-
+if sys.version_info[0] == 2:
+    import io
 def init_ctx(path='./yang'):
     repos = FileRepository(path)
     ctx = Context(repos)
