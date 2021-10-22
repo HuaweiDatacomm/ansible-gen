@@ -27,7 +27,16 @@ ansible-gen is an automatic code generation tool for ansible modules according t
 ```
 $git clone https://github.com/HuaweiDatacomm/ansible-gen.git
 ```
+```
+$python setup.py install
+```
+### **From Pypi**
 
+```
+$pip3 install ansible-gen
+```
+
+### **install command**
 ```
 $cd ./ansible-gen/ansible-gen
 ```
@@ -40,11 +49,6 @@ $chmod +x ./ansible-gen.sh
 $./ansible-gen.sh
 ```
 
-### **From Pypi**
-
-```
-$pip3 install ansible-gen
-```
 
 ## **How to use**
 input commandline: **ansilbe-gen -h** after installation.
