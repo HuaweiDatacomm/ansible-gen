@@ -259,6 +259,9 @@ def get_restrict(node):
     if not type_spec:
         return []
     if type_spec.name == "leafref":
+        if not hasattr(type_spec,'i_target_node'):
+            logging.error("leaf %s type is %s but no target node", node.arg,type_spec.name)
+            return None
         target_node = type_spec.i_target_node
         return get_restrict(target_node)
     if type_spec.name == "string":
