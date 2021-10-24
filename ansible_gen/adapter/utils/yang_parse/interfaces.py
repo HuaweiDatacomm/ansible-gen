@@ -2,17 +2,16 @@
 # -*- coding: utf-8 -*-
 
 
-import os
 import copy
 import logging
 from collections import OrderedDict
 
 from . import pyang_util
-from ansible_gen.adapter.utils.yang_parse import constant
-from ansible_gen.adapter.utils.yang_parse import utils
-from ansible_gen.adapter.utils.xml_parse.xml_parser_get_xmlns import get_node_xmlns
-from ansible_gen.adapter.utils.base_util import operation_warning_write
-from ansible_gen.adapter.utils.yang_parse.constant import BASE_INTEGER_TYPES
+from . import constant
+from . import utils
+from ..xml_parse.xml_parser_get_xmlns import get_node_xmlns
+from ..base_util import operation_warning_write
+from .constant import BASE_INTEGER_TYPES
 
 LIST_KEY_SET = set()
 

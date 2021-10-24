@@ -8,7 +8,7 @@ from xml.dom.minidom import parse
 from xml.parsers.expat import ExpatError
 from collections import OrderedDict
 import xmltodict
-from ansible_gen.adapter.utils.base_util import error_write, xml_structure_except
+from ..base_util import error_write, xml_structure_except
 
 CONFIG_OR_FILTER_CONTENT = OrderedDict()
 XMLNS_INFO_LIST = []
@@ -285,6 +285,7 @@ def get_xml_namespace(file_name,pkg_type):
     try:
         doc = parse(file_name)
         root = doc.documentElement
+        child_nodes = None
         if pkg_type in ['get','get-config']:
             if root.getElementsByTagNameNS("urn:ietf:params:xml:ns:netconf:base:1.0", "filter"):
                 child_nodes = root.getElementsByTagNameNS("urn:ietf:params:xml:ns:netconf:base:1.0", "filter")[
@@ -296,9 +297,12 @@ def get_xml_namespace(file_name,pkg_type):
         else:
             child_nodes = root.childNodes
             logging.info("This is rpc-xml:" + file_name)
-        for child_node in child_nodes:
-            if child_node.nodeType == 1 and hasattr(child_node, 'namespaceURI'):
-                feature_namespaces.append(child_node.namespaceURI)
+
+        if child_nodes is not None:
+            for child_node in child_nodes:
+                if child_node.nodeType == 1 and hasattr(child_node, 'namespaceURI'):
+                    feature_namespaces.append(child_node.namespaceURI)
+
     except ExpatError as expat_exception:
         xml_structure_except(expat_exception, file_name)
     except Exception as error_str:

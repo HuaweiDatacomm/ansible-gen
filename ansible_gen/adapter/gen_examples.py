@@ -3,12 +3,10 @@
 
 import os
 import sys
-import re
-import logging
 from collections import OrderedDict
-from ansible_gen.adapter.utils.base_util import operation_warning_write
-from ansible_gen.adapter.utils.xml_parse.xml_parser import is_sub_xml, xml_to_ordered_dict
-from ansible_gen.adapter.utils.xml_parse.xml_parser import get_operations_attr
+from .utils.base_util import operation_warning_write
+from .utils.xml_parse.xml_parser import is_sub_xml, xml_to_ordered_dict
+from .utils.xml_parse.xml_parser import get_operations_attr
 
 if sys.version < '3':
     str = unicode
