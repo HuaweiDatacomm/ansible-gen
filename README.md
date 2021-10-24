@@ -6,7 +6,7 @@ ansible-gen is an automatic code generation tool for ansible modules according t
 
 ## **Installation**
 ### **Prerequisites**
-- OS: Windows,Red Hat,Ubuntu,CentOS,OS X,BSD,Suse,macOS
+- OS: Windows,Red Hat,Ubuntu,CentOS,OS X,BSD,Suse
 
 - Python: Python2/Python3(greater than python2.7 is preferred)
 
