@@ -14,12 +14,6 @@ ansible-gen is an automatic code generation tool for ansible modules according t
 
 - Ne-ansible-plugin: see [https://github.com/HuaweiDatacomm/ne-ansible-plugin](https://github.com/HuaweiDatacomm/ne-ansible-plugin)
 
-- Pyinstaller: 3.6
-
-- pycodestyle: 2.5.0
-
-- Autopep8: 1.4.3
-
 - pyang: 2.5.0
 
 
@@ -51,31 +45,23 @@ Ansible module
 
 Options:
 
-  -h, --help            show this help message and exit
+  -h, --help  &#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;show this help message and exit
 
-  -v, --version         version number info for program
+  -v, --version&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;version number info for program
 
-  -y YANG_DIR, --yang_dir=YANG_DIR
-                        the directory of yang_files.
+  -y YANG_DIR, --yang_dir=YANG_DIR&#x2003;&#x2003;&#x2002;      the directory of yang_files.
 
-  -r XML_DIR, --resource=XML_DIR
-                        the directory of xml files which contains netconf rpc
-                        message.
+  -r XML_DIR, --resource=XML_DIR&#x2003;&#x2003;&#x2003;&#x2003;        the directory of ansible api description xml files.
 
-  -p SCRIPT_DIR, --script=SCRIPT_DIR
-                        the directory of previous generated ansible module
-                        which may has user define check implementation.
+  -p SCRIPT_DIR, --script=SCRIPT_DIR&#x2003;&#x2003;    the directory of previous generated ansible module which may has user define check implementation.
 
-  -l LOG_DIR, --log=LOG_DIR
-                        the log directory, name of log is ansible_gen.log
+  -l LOG_DIR, --log=LOG_DIR&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2002;&#x2003; the log directory, name of log is ansible_gen.log
 
-  -o OUTPUT_DIR, --output=OUTPUT_DIR
-                        the output dir for generated scripts
+  -o OUTPUT_DIR, --output=OUTPUT_DIR&#x2003;    the output dir for generated ansible modules
 
-  --default get parameters from default config file /etc/ansible-
-                        gen/default.cfg
+  --default&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;get parameters from default config file /etc/ansible-gen/default.cfg
 
-Ansible-gen 0.2.0
+
 
 
 ## **Additional Resources**
