@@ -4,13 +4,13 @@
 
 import logging
 import os
-import ansible_gen.adapter.gen_examples as gen_example
-import ansible_gen.adapter.get_imp_cls_def as get_imp_cls
-from ansible_gen.adapter.utils.xml_parse.xml_parser_get_xmlns import get_xmlns_info, xmlns_info_without_prefix, \
+from ..adapter import gen_examples as gen_example
+from ..adapter import get_imp_cls_def as get_imp_cls
+from ..adapter.utils.xml_parse.xml_parser_get_xmlns import get_xmlns_info, xmlns_info_without_prefix, \
     get_xml_namespace
-from ansible_gen.adapter.get_argument_spec_documentation import get_xml_options, get_xml_dict, get_xml_descption, \
+from ..adapter.get_argument_spec_documentation import get_xml_options, get_xml_dict, get_xml_descption, \
     gen_documentation, check_xpaths_exists, get_xml_key_leafs, get_xml_list_leafs, get_xml_leafinfos, gen_argument_spec
-from ansible_gen.adapter.get_rpc_head_tail import get_rpc_head, get_rpc_tail
+from ..adapter.get_rpc_head_tail import get_rpc_head, get_rpc_tail
 
 yang_handler = None
 

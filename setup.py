@@ -1,11 +1,20 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='ansible-gen',
-    version='0.3.1',
-    packages=['ansible_gen', 'ansible_gen.adapter', 'ansible_gen.adapter.utils', 'ansible_gen.adapter.utils.xml_parse',
-              'ansible_gen.adapter.utils.yang_parse', 'ansible_gen.generator'],
+    version='0.5.1',
+    packages=find_packages(),
     include_package_data=True,
+    entry_points={
+        'console_scripts': [
+          'ansible-gen=ansible_gen.ansible_gen:main',
+        ],
+    },
+    install_requires=[
+        "pyang >=2.5.0",
+        "jinja2==2.11.0",
+        "xmltodict==0.11.0",
+    ],
     url='https://github.com/HuaweiDatacomm/ansible-gen',
     license='Apache License, Version 2.0',
     author='frank feng',

@@ -6,7 +6,7 @@ ansible-gen is an automatic code generation tool for ansible modules according t
 
 ## **Installation**
 ### **Prerequisites**
-- OS: Windows,Red Hat,Ubuntu,CentOS,OS X,BSD,Suse,macOS
+- OS: Windows,Red Hat,Ubuntu,CentOS,OS X,BSD,Suse
 
 - Python: Python2/Python3(greater than python2.7 is preferred)
 
@@ -34,22 +34,6 @@ $python setup.py install
 
 ```
 $pip3 install ansible-gen
-```
-
-### **install command**
-
-_Note: for macOS, you should [disable SIP](https://developer.apple.com/documentation/security/disabling_and_enabling_system_integrity_protection) firstly._
-
-```
-$cd ./ansible-gen/ansible-gen
-```
-
-```
-$chmod +x ./ansible-gen.sh
-```
-
-```
-$./ansible-gen.sh
 ```
 
 

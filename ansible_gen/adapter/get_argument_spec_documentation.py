@@ -5,11 +5,11 @@ import os
 import time
 import logging
 import re
-from ansible_gen.adapter.utils.xml_parse.xml_parser import xml_to_ordered_dict
-from ansible_gen.adapter.utils.yang_parse.yang_parser import YangParser
-from ansible_gen.adapter.utils.yang_parse.interfaces import get_leaf_info_for_doc, get_leafinfos_from_xml_dict, \
+from .utils.xml_parse.xml_parser import xml_to_ordered_dict
+from .utils.yang_parse.yang_parser import YangParser
+from .utils.yang_parse.interfaces import get_leaf_info_for_doc, get_leafinfos_from_xml_dict, \
     get_module_description, make_argument_spec, get_key_leafs, get_all_lists, check_all_node_exists
-from ansible_gen.adapter.utils.base_util import error_write
+from .utils.base_util import error_write
 
 YANG_HANDLER = ''  # define the global YANG_HANDLER
 DEFAULT_INDENT = ' ' * 4

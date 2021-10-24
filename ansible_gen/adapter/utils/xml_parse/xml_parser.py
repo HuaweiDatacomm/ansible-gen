@@ -9,7 +9,7 @@ from lxml import etree
 from collections import OrderedDict
 from xml.parsers.expat import ExpatError
 import xmltodict
-from ansible_gen.adapter.utils.base_util import error_write, xml_structure_except
+from ..base_util import error_write, xml_structure_except
 
 COMMON_XMLNS_MAP = {"nc": "urn:ietf:params:xml:ns:netconf:base:1.0"}
 

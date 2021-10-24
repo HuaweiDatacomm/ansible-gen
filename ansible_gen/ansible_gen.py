@@ -1,20 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
-
+import os
 import sys
 import codecs
 import traceback
 import logging
-import re
 import shutil
 import math
 from optparse import OptionParser
-from ansible_gen.generator.ansible_auto_scripts import deploy
-from ansible_gen.adapter import get_argument_spec_documentation as get_parser
-from ansible_gen.generator import var, ansible_auto_scripts as script_gen
-from ansible_gen.generator.move_file import *
-from ansible_gen.adapter.utils import base_util
+from adapter import get_argument_spec_documentation as get_parser
+from generator import var, ansible_auto_scripts as script_gen
+from generator.move_file import *
+from adapter.utils import base_util
 
 if not sys.version > '3':
     import ConfigParser as configparser
@@ -26,7 +23,7 @@ else:
 
 
 USAGE = "Dynamically generate Ansible modules from yang and xml files, then deploy Ansible module"
-__version__ = "0.3.1"
+__version__ = "0.5.1"
 
 SCRIPT_GEN_LOG_FILE = "ansible_gen.log"
 BASE_ERROR = r"##########ANSIBLE_GEN_ERROR_START##########"
@@ -122,14 +119,14 @@ def parse_args():
     parser.add_option("-y", "--yang_dir", dest="yang_dir", default='',
                       help="the directory of yang_files.")
     parser.add_option("-r", "--resource", dest="xml_dir", default='',
-                      help="the directory of xml files which contains netconf rpc message.")
+                      help="the directory of ansible api description xml files.")
     parser.add_option("-p", "--script", dest="script_dir", default='',
                       help="the directory of previous generated ansible module which may has user define"
                            " check implementation.")
-    parser.add_option("-l", "--log", dest="log_dir", default='',
+    parser.add_option("-l", "--log", dest="log_dir", default=None,
                       help="the log directory, name of log is ansible_gen.log")
-    parser.add_option("-o", "--output", dest="output_dir", default='',
-                      help="the output dir for generated scripts")
+    parser.add_option("-o", "--output", dest="output_dir", default=None,
+                      help="the output dir for generated ansible modules")
     parser.add_option("--default", dest="default", default='', action='store_true',
                       help="get parameters from default config file /etc/ansible-gen/default.cfg")
 
@@ -140,6 +137,11 @@ def parse_args():
         sys.exit()
 
     fill_args_from_cfg_file(args, options)
+
+    if options.log_dir is None:
+        options.log_dir = os.path.join(os.getcwd(), 'logs')
+    if not os.path.exists(options.log_dir):
+        os.makedirs(options.log_dir)
 
     log_file_name = os.path.join(options.log_dir, SCRIPT_GEN_LOG_FILE)
 
@@ -164,7 +166,7 @@ def env_parse():
     """
     (options, args) = parse_args()
 
-    for name in ["yang_dir", "xml_dir", "log_dir"]:
+    for name in ["yang_dir", "xml_dir"]:
         if not os.path.isdir(getattr(options, name)):
             sys.stderr.write("[0x000001] : %s %s doesn't exists or not designated" % (
                 name, getattr(options, name)))
@@ -294,6 +296,8 @@ def main():
             if average_remaining_progress == 0:
                 average_remaining_progress = 1
             output_dir = options.output_dir
+            if output_dir is None:
+                output_dir = get_ansible_path()[0]
             if not os.path.exists(output_dir):
                 os.makedirs(output_dir)
             if options.script_dir:

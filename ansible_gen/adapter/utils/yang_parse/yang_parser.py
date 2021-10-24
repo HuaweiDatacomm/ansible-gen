@@ -88,13 +88,13 @@ class YangParser():
             yang_file += ".yang"
             logging.info("parse yang file %s", yang_file)
             path = os.path.join(self.yang_dir, yang_file)
-            pyang_util.parse_yang_module(path,self.ctx)
+            pyang_util.parse_yang_module(path, self.ctx)
             # progress_bar
             completed_progress += average_progress
             if completed_progress > 49:
                 completed_progress = 49
             process_message = " {0} parse Completed.".format(yang_file)
-            base_util.print_progress_bar(completed_progress,process_message)
+            base_util.print_progress_bar(completed_progress, process_message)
 
         # modules = {}
         # main_yangs = [os.path.splitext(base_name)[0]
