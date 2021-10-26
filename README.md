@@ -60,6 +60,8 @@ Options:
 
   --default&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;get parameters from default config file /etc/ansible-gen/default.cfg
 
+## **Usage Example**
+see [ansible-gen-example](https://github.com/HuaweiDatacomm/ansible-gen-examples)
 
 ## Contributing
 
