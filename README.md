@@ -14,7 +14,6 @@ ansible-gen is an automatic code generation tool for ansible modules according t
 
 - Ne-ansible-plugin: see [https://github.com/HuaweiDatacomm/ne-ansible-plugin](https://github.com/HuaweiDatacomm/ne-ansible-plugin)
 
-- pyang: 2.5.0
 
 
 ### **From Source**
