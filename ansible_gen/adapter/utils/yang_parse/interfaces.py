@@ -119,7 +119,7 @@ def recursive_root_of_augment(node_name, root):
         if node_name == current_node.arg:
             root = current_node
             return root
-    return root
+    return None
 
 def get_xpaths_node_of_augment(xpath, root):
     """Get the xpath-node from feature_info when augment.
