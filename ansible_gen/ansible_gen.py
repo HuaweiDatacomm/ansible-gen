@@ -30,7 +30,7 @@ else:
 
 
 USAGE = "Dynamically generate Ansible modules from yang and xml files, then deploy Ansible module"
-__version__ = "0.5.2"
+__version__ = "0.6.0"
 
 SCRIPT_GEN_LOG_FILE = "ansible_gen.log"
 BASE_ERROR = r"##########ANSIBLE_GEN_ERROR_START##########"
