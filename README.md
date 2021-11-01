@@ -73,4 +73,4 @@ There are many ways to contribute:
 
 
 ## **Additional Resources**
-TBD
+https://intl.devzone.huawei.com/en/datacom/network-element/docs/ansiblegen/ansible-gen.html?mdName=ansible-gen-user-guide.md
