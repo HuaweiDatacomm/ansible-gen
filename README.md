@@ -76,4 +76,3 @@ There are many ways to contribute:
 
 - [Video Demo](https://www.youtube.com/watch?v=up-fYpTZnFY)
 - [Documentation](https://intl.devzone.huawei.com/en/datacom/network-element/docs/ansiblegen/ansible-gen.html?mdName=ansible-gen-user-guide.md)
-- [Ansible-gen-examples](https://github.com/HuaweiDatacomm/ansible-gen-examples)
