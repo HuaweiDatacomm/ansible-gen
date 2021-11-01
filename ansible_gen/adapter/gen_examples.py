@@ -46,10 +46,10 @@ def gen_dict(xml_file, full_xml_file):
         operation_dict = get_operations_attr(xml_file)
         return [{xml_filename: xml_dict}, {xml_filename: operation_dict}]
     else:
-        operation_error_str = "EXAMPLE of instance-xml can not be generated," \
-                    "because the instance-xml is not a substructure of full-xml,please check:" \
-                    "\nthe path of instance-xml: %s." \
-                    "\nthe path of full-xml: %s." % (xml_file, full_xml_file)
+        operation_error_str = "EXAMPLE can not be generated," \
+                    "because the example xml file is not a substructure of API description xml,please check:" \
+                    "\nthe path of example xml: %s." \
+                    "\nthe path of API description xml: %s." % (xml_file, full_xml_file)
         operation_warning_write(operation_error_str)
         return [{}, {}]
 
