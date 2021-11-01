@@ -10,11 +10,10 @@ ansible-gen is an automatic code generation tool for ansible modules according t
 
 - Python: Python2/Python3(greater than python2.7 is preferred)
 
-- Ansible(optional): ansible 2.6 or later and lower than 2.10
+- Ansible(optional): ansible 2.6 or later and lower than 2.10, greater than 2.10 is under development.
 
 - Ne-ansible-plugin: see [https://github.com/HuaweiDatacomm/ne-ansible-plugin](https://github.com/HuaweiDatacomm/ne-ansible-plugin)
 
-- pyang: 2.5.0
 
 
 ### **From Source**
@@ -31,7 +30,7 @@ $pip3 install ansible-gen
 ```
 
 
-## **How to use**
+## **How to use it**
 input commandline: **ansilbe-gen -h** after installation.
 
 ```
@@ -61,8 +60,19 @@ Options:
 
   --default&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;get parameters from default config file /etc/ansible-gen/default.cfg
 
+## **Usage Example**
+see [ansible-gen-example](https://github.com/HuaweiDatacomm/ansible-gen-examples)
 
+## Contributing
+
+There are many ways to contribute:
+- Fix and report bugs
+- Improve documentation
+- Review code and feature proposals
+- Answer questions and discuss here on github and on our [Community Site](https://intl.devzone.huawei.com/en/datacom/network-element/index.html)
 
 
 ## **Additional Resources**
-TBD
+
+- [Video Demo](https://www.youtube.com/watch?v=up-fYpTZnFY)
+- [Documentation](https://intl.devzone.huawei.com/en/datacom/network-element/docs/ansiblegen/ansible-gen.html?mdName=ansible-gen-user-guide.md)

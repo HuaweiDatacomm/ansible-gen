@@ -1,8 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='ansible-gen',
-    version='0.5.2',
+    name='ansible-gen',    version='0.6.1',
     packages=find_packages(),
     include_package_data=True,
     entry_points={
