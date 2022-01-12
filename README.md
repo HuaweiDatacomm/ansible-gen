@@ -8,9 +8,9 @@ ansible-gen is an automatic code generation tool for ansible modules according t
 ### **Prerequisites**
 - OS: Windows,Red Hat,Ubuntu,CentOS,OS X,BSD,Suse
 
-- Python: Python2/Python3(greater than python2.7 is preferred)
+- Python: Python2/Python3(greater than python3.8 is preferred)
 
-- Ansible(optional): ansible 2.6 or later and lower than 2.10, greater than 2.10 is under development.
+- Ansible(optional): ansible 2.9+ or later is preferred.
 
 - Ne-ansible-plugin: see [https://github.com/HuaweiDatacomm/ne-ansible-plugin](https://github.com/HuaweiDatacomm/ne-ansible-plugin)
 
