@@ -18,8 +18,8 @@ def get_ansible_path():
         ansible_path = re.search(r'ansible python module location = (.*)', res).group(1)
     except Exception:
         raise Exception('No ansible_path!')
-    return [ansible_path.strip() + '/modules/network/ne',
-            ansible_path.strip() + '/module_utils/network/ne']
+    return [ansible_path.strip() + '/modules',
+            ansible_path.strip() + '/module_utils']
 
 
 if __name__ == '__main__':
